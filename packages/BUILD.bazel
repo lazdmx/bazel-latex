@@ -46,6 +46,15 @@ latex_package(
 )
 
 latex_package(
+    name = "acronym",
+    srcs = [
+        ":xstring",
+        "@texlive_texmf__texmf-dist__tex__latex__acronym",
+        "@texlive_texmf__texmf-dist__tex__latex__bigfoot",
+    ],
+)
+
+latex_package(
     name = "amsthm",
     srcs = [":amscls"],
     tests = ["amsthm_test.tex"],
@@ -70,6 +79,37 @@ latex_package(
         "@texlive_texmf__texmf-dist__tex__generic__babel-english",
     ],
     tests = ["babel_english_test.tex"],
+)
+
+latex_package(
+    name = "babel_russian",
+    srcs = [
+        ":babel",
+        "@texlive_texmf__texmf-dist__tex__generic__babel-russian",
+        "@texlive_texmf__texmf-dist__tex__generic__hyph-utf8__loadhyph",
+        "@texlive_texmf__texmf-dist__tex__generic__hyph-utf8__patterns__tex",
+        "@texlive_texmf__texmf-dist__tex__luatex__hyph-utf8",
+    ],
+)
+
+latex_package(
+    name = "polyglossia",
+    srcs = [
+        ":etoolbox",
+        ":fontspec",
+        ":ifxetex",
+        ":luatexbase",
+        ":xkeyval",
+        "@texlive_texmf__texmf-dist__tex__latex__makecmds",
+        "@texlive_texmf__texmf-dist__tex__latex__polyglossia",
+    ],
+)
+
+latex_package(
+    name = "quoting",
+    srcs = [
+        "@texlive_texmf__texmf-dist__tex__latex__quoting",
+    ],
 )
 
 latex_package(
